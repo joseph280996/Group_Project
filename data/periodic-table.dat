@@ -1,0 +1,119 @@
+Symbol	Element	Atomic Number	Standard Atomic Weight	Group #	Period #	Alternate Spelling	Group Name	Half-life
+H	Hydrogen	1	"[1.007,84, 1.008,11]"	1	1		Alkali Metal	
+He	Helium	2	"4.002,602(2)"	18	1		Noble Gas	
+Li	Lithium	3	"[6.938, 6.997]"	1	2		Alkali Metal	
+Be	Beryllium	4	"9.012,1831(5)"	2	2		Alkaline Earth Metal	
+B	Boron	5	"[10.806, 10.821]"	13	2		Boron Group	
+C	Carbon	6	"[12.0096, 12.0116]"	14	2		Carbon Group	
+N	Nitrogen	7	"[14.006,43, 14.007,28]"	15	2		Pnictogen	
+O	Oxygen	8	"[15.999,03, 15.999,77]"	16	2		Chalcogen	
+F	Fluorine	9	"18.998,403,163(6)"	17	2		Halogen	
+Ne	Neon	10	20.1797(6)	18	2		Noble Gas	
+Na	Sodium	11	"22.989,769,28(2)"	1	3		Alkali Metal	
+Mg	Magnesium	12	"[24.304, 24.307]"	2	3		Alkaline Earth Metal	
+Al	Aluminum	13	"26.981,5385(7)"	13	3	Aluminium	Boron Group	
+Si	Silicon	14	"[28.084, 28.086]"	14	3		Carbon Group	
+P	Phosphorus	15	"30.973,761,998(5)"	15	3		Pnictogen	
+S	Sulfur	16	"[32.059, 32.076]"	16	3		Chalcogen	
+Cl	Chlorine	17	"[35.446, 35.457]"	17	3		Halogen	
+Ar	Argon	18	39.948(1)	18	3		Noble Gas	
+K	Potassium	19	39.0983(1)	1	4		Alkali Metal	1.248(3)e10+9 a
+Ca	Calcium	20	40.078(4)	2	4		Alkaline Earth Metal	5.3(1.7)e10+19 a
+Sc	Scandium	21	"44.955,908(5)"	3	4			
+Ti	Titanium	22	47.867(1)	4	4			
+V	Vanadium	23	50.9415(1)	5	4			1.5(4)e10+17 a
+Cr	Chromium	24	51.9961(6)	6	4			
+Mn	Manganese	25	"54.938,044(3)"	7	4			
+Fe	Iron	26	55.845(2)	8	4			
+Co	Cobalt	27	"58.933,194(4)"	9	4			
+Ni	Nickel	28	58.6934(4)	10	4			
+Cu	Copper	29	63.546(3)	11	4			
+Zn	Zinc	30	65.38(2)	12	4			
+Ga	Gallium	31	69.723(1)	13	4		Boron Group	
+Ge	Germanium	32	72.630(8)	14	4		Carbon Group	1.58(17)e10+21 a
+As	Arsenic	33	"74.921,595(6)"	15	4		Pnictogen	
+Se	Selenium	34	78.971(8)	16	4		Chalcogen	9.7(5)e10+19 a
+Br	Bromine	35	"[79.901, 79.907]"	17	4		Halogen	
+Kr	Krypton	36	83.798(2)	18	4		Noble Gas	
+Rb	Rubidium	37	85.4678(3)	1	5		Alkali Metal	4.923(22)e10+10 a
+Sr	Strontium	38	87.62(1)	2	5		Alkaline Earth Metal	
+Y	Yttrium	39	"88.905,84(2)"	3	5			
+Zr	Zirconium	40	91.224(2)	4	5			2.0(4)e10+19 a
+Nb	Niobium	41	"92.906,37(2)"	5	5			
+Mo	Molybdenum	42	95.95(1)	6	5			7.3(4)e10+18 a
+Tc	Technetium	43		7	5			4.21(16)e10+6 a
+Ru	Ruthenium	44	101.07(2)	8	5			
+Rh	Rhodium	45	"102.905,50(2)"	9	5			
+Pd	Palladium	46	106.42(1)	10	5			
+Ag	Silver	47	107.8682(2)	11	5			
+Cd	Cadmium	48	112.414(4)	12	5			8.04(5)e10+15 a
+In	Indium	49	114.818(1)	13	5		Boron Group	4.41(25)e10+14 a
+Sn	Tin	50	118.710(7)	14	5		Carbon Group	
+Sb	Antimony	51	121.760(1)	15	5		Pnictogen	
+Te	Tellurium	52	127.60(3)	16	5		Chalcogen	2.2(3)e10+24 a
+I	Iodine	53	"126.904,47(3)"	17	5		Halogen	
+Xe	Xenon	54	131.293(6)	18	5		Noble Gas	>10e10+21 a
+Cs	Cesium	55	"132.905,451,96(6)"	1	6	Caesium	Alkali Metal	
+Ba	Barium	56	137.327(7)	2	6		Alkaline Earth Metal	>4e10+21 a
+La	Lanthanum	57	"138.905,47(7)"		6			1.02(1)e10+11 a
+Ce	Cerium	58	140.116(1)		6			
+Pr	Praseodymium	59	"140.907,66(2)"		6			
+Nd	Neodymium	60	144.242(3)		6			2.29(16)e10+15 a
+Pm	Promethium	61			6			17.7(4) a
+Sm	Samarium	62	150.36(2)		6			1.066(7)e10+11 a
+Eu	Europium	63	151.964(1)		6			
+Gd	Gadolinium	64	157.25(3)		6			
+Tb	Terbium	65	"158.925,35(2)"		6			
+Dy	Dysprosium	66	162.500(1)		6			
+Ho	Holmium	67	"164.930,33(2)"		6			
+Er	Erbium	68	167.259(3)		6			
+Tm	Thulium	69	"168.934,22(2)"		6			
+Yb	Ytterbium	70	173.054(5)		6			
+Lu	Lutetium	71	174.9668(1)	3	6			3.76(7)e10+10 a
+Hf	Hafnium	72	178.49(2)	4	6			2.0(4)e10+15 a
+Ta	Tantalum	73	"180.947,88(2)"	5	6			
+W	Tungsten	74	183.84(1)	6	6			1.8(2)e10+18 a
+Re	Rhenium	75	186.207(1)	7	6			4.33(7)e10+10 a
+Os	Osmium	76	190.23(3)	8	6			2.0(1.1)e10+15 a
+Ir	Iridium	77	192.217(3)	9	6			
+Pt	Platinum	78	195.084(9)	10	6			6.5(3)e10+11 a
+Au	Gold	79	"196.966,569(5)"	11	6			
+Hg	Mercury	80	200.592(3)	12	6			
+Tl	Thallium	81	"[204.382, 204.385]"	13	6		Boron Group	
+Pb	Lead	82	207.2(1)	14	6		Carbon Group	
+Bi	Bismuth	83	"208.980,40(1)"	15	6		Pnictogen	1.99(7)e10+19 a
+Po	Polonium	84		16	6		Chalcogen	2.898(2) a
+At	Astatine	85		17	6		Halogen	8.1(4) h
+Rn	Radon	86		18	6		Noble Gas	2.4(1) h
+Fr	Francium	87		1	7		Alkali Metal	20.0(6) min
+Ra	Radium	88		2	7		Alkaline Earth Metal	1.600(7)e10+3 a
+Ac	Actinium	89			7			9.920(3) d
+Th	Thorium	90	232.0377(4)		7			7.54(3)e10+4 a
+Pa	Protactinium	91	"231.035,88(2)"		7			3.276(11)e10+4 a
+U	Uranium	92	"238.028,91(3)"		7			1.592(2)e10+5 a
+Np	Neptunium	93			7			1.53(5)e10+5 a
+Pu	Plutonium	94			7			87.7(1) a
+Am	Americium	95			7			432.6(6) a
+Cm	Curium	96			7			29.1(1) a
+Bk	Berkelium	97			7			1.38(25)e10+3 a
+Cf	Californium	98			7			351(2) a
+Es	Einsteinium	99			7			472(2) d
+Fm	Fermium	100			7			3.00(12) d
+Md	Mendelevium	101			7			51.5(3) d
+No	Nobelium	102			7			3.52(18) min
+Lr	Lawrencium	103		3	7			39(12) min
+Rf	Rutherfordium	104		4	7			6.6(5.3) min
+Db	Dubnium	105		5	7			30.8(5.0) h
+Sg	Seaborgium	106		6	7			8.0(6.3) min
+Bh	Bohrium	107		7	7			3.8(3.0) min
+Hs	Hassium	108		8	7			27(17) s
+Mt	Meitnerium	109		9	7			0.73(16) s
+Ds	Darmstadtium	110		10	7			11(6) s
+Rg	Roentgenium	111		11	7			37(17) s
+Cn	Copernicium	112		12	7			4.1(1.0) s
+Ns	Neilsborium	113		13	7		Boron Group	8(4) s
+Fl	Flerovium	114		14	7		Carbon Group	0.52(13) s
+Mc	Moscovium	115		15	7		Pnictogen	0.19(4) s
+Lv	Livermorium	116		16	7		Chalcogen	28(15) ms
+Ts	Tennessine	117		17	7		Halogen	18(8) ms
+Og	Oganeson	118		18	7		Noble Gas	1.4(7) ms

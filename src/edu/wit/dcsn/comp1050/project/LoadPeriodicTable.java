@@ -67,6 +67,7 @@ public class LoadPeriodicTable
 	 */
     public static void main( String[] args )
         {
+    	HashMap<Integer,HashMap<Integer,ArrayList<Element>>> periodicTable;
         // use a Scanner object to read the data file line-by-line
         try ( Scanner elementsDB =	new Scanner( new File( "./data/periodic-table.dat" ) ) )
             {
@@ -100,7 +101,15 @@ public class LoadPeriodicTable
             					? -1
             					: Integer.parseInt( elementFields[GROUP_NUMBER] ) ) ;
             	int period =            Integer.parseInt( elementFields[PERIOD] ) ;
-    
+            	Element element = new Element( headerFields[SYMBOL], 
+                               headerFields[ELEMENT], 
+                               Integer.parseInt(headerFields[ATOMIC_NUMBER]), 
+                               headerFields[ATOMIC_WEIGHT], 
+                               Integer.parseInt(headerFields[PERIOD]),
+                               Integer.parseInt(headerFields[GROUP_NUMBER]),
+                               headerFields[GROUP_NAME],
+                               headerFields[HALF_LIFE], 
+                               headerFields[ALTERNATE_SPELLING]);
             	// there appear to be odd formatting choices here - they exist so we can
             	// use the same format as above
             	System.out.printf( "%6s  %-13s  %-13s  %-22s  %-8s  %-7s  %-20s  %-16s  %-25s%n",

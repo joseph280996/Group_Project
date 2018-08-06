@@ -87,19 +87,20 @@ public class LoadPeriodicTable
             
             // read and display each data line (one line per element in the periodic table
             String[] elementFields ;
+            ArrayList<Element> elementList = new ArrayList<Element>();
+            
             while( elementsDB.hasNext() )
             	{
             	// each line is tab-delimited
             	// some fields may be surrounded by double quotes (") - remove them
             	// split the line into 9 separate fields (as defined in the file)
             	elementFields =         parseRecord( elementsDB.nextLine() ) ;
-    
+            	Element el = new Element(elementFields);
+            	elementList.add(el);
             	// convert select fields to their numeric values (will aid in placing them in the GUI)
             	// the Group might not be specified - substitute a sentinel value (-1)
             	int atomicNumber =      Integer.parseInt( elementFields[ATOMIC_NUMBER] ) ;
-            	int group =             ( elementFields[GROUP_NUMBER].equals( "" )
-            					? -1
-            					: Integer.parseInt( elementFields[GROUP_NUMBER] ) ) ;
+            	int group =             ( elementFields[GROUP_NUMBER].equals( "" ) ? -1 : Integer.parseInt( elementFields[GROUP_NUMBER] ) ) ;
             	int period =            Integer.parseInt( elementFields[PERIOD] ) ;
             	Element element = new Element( headerFields[SYMBOL], 
                                headerFields[ELEMENT], 

@@ -7,6 +7,7 @@ public class Element {
 	int atomicNum;
 	String standardAtomicWeight;
 	int PeriodNum;
+	int groupNum;
 	String groupName;
 	String halfLife;
 	String alternateSpelling;
@@ -25,6 +26,7 @@ public class Element {
 		this.atomicNum = atomicNum;
 		this.standardAtomicWeight = standardAtomicWeight;
 		this.PeriodNum = PeriodNum;
+		this.groupNum = groupNum;
 		this.groupName = groupName;
 		this.halfLife = halfLife;
 		this.alternateSpelling = alternateSpelling;

@@ -65,6 +65,7 @@ public class Main extends Application {
         }
 		try {
 			GridPane matrix = new GridPane();
+			BorderPane pane = new BorderPane();
 		    Label[][] label = new Label[19][10];
 		    int tempGroupNum8 = 4;
 		    int tempGroupNum9 = 4;
@@ -85,7 +86,7 @@ public class Main extends Application {
             		default: label[tempGroupNum8][8].setTextFill(Color.BLACK);
             	}
             	label[tempGroupNum8][8].setOnMouseClicked(e -> {
-        			BorderPane pane = new BorderPane();
+        			//BorderPane pane = new BorderPane();
         			Label name = new Label("Name: " + elm.elementName);
         			Label number = new Label("Number: " + Integer.toString(elm.atomicNum));
         			Label weight = new Label("Weight: " + elm.standardAtomicWeight);
@@ -96,11 +97,11 @@ public class Main extends Application {
         			pane.setTop(name);
         			pane.setLeft(number);
         			pane.setRight(group);
-        			Scene elmInfo = new Scene(pane, 350, 300);
-        			Stage elmInfoStage = new Stage();
-        			elmInfoStage.setScene(elmInfo);
-        			elmInfoStage.setTitle(elm.elementName);
-        			elmInfoStage.show();
+        			//Scene elmInfo = new Scene(pane, 350, 300);
+        			//Stage elmInfoStage = new Stage();
+        			//elmInfoStage.setScene(elmInfo);
+        			//elmInfoStage.setTitle(elm.elementName);
+        			//elmInfoStage.show();
         	});
             	
                 matrix.add(label[tempGroupNum8][8], tempGroupNum8, 8);
@@ -123,7 +124,7 @@ public class Main extends Application {
             		default: label[tempGroupNum9][9].setTextFill(Color.BLACK);
             	}
 	            	label[tempGroupNum9][9].setOnMouseClicked(e -> {
-            			BorderPane pane = new BorderPane();
+            			//BorderPane pane = new BorderPane();
             			Label name = new Label("Name: " + elm.elementName);
             			Label number = new Label("Number: " + Integer.toString(elm.atomicNum));
             			Label weight = new Label("Weight: " + elm.standardAtomicWeight);
@@ -134,11 +135,11 @@ public class Main extends Application {
             			pane.setTop(name);
             			pane.setLeft(number);
             			pane.setRight(group);
-            			Scene elmInfo = new Scene(pane, 350, 300);
-            			Stage elmInfoStage = new Stage();
-            			elmInfoStage.setScene(elmInfo);
-            			elmInfoStage.setTitle(elm.elementName);
-            			elmInfoStage.show();
+            			//Scene elmInfo = new Scene(pane, 350, 300);
+            			//Stage elmInfoStage = new Stage();
+            			//elmInfoStage.setScene(elmInfo);
+            			//elmInfoStage.setTitle(elm.elementName);
+            			//elmInfoStage.show();
             	});
 	            	
 	                matrix.add(label[tempGroupNum9][9], tempGroupNum9, 9);
@@ -161,7 +162,7 @@ public class Main extends Application {
         		default: label[elm.groupNum][elm.PeriodNum].setTextFill(Color.BLACK);
         	}
             	label[elm.groupNum][elm.PeriodNum].setOnMouseClicked(e -> {
-            			BorderPane pane = new BorderPane();
+            			//BorderPane pane = new BorderPane();
             			Label name = new Label("Name: " + elm.elementName);
             			Label number = new Label("Number: " + Integer.toString(elm.atomicNum));
             			Label weight = new Label("Weight: " + elm.standardAtomicWeight);
@@ -172,11 +173,11 @@ public class Main extends Application {
             			pane.setTop(name);
             			pane.setLeft(number);
             			pane.setRight(group);
-            			Scene elmInfo = new Scene(pane, 350, 300);
-            			Stage elmInfoStage = new Stage();
-            			elmInfoStage.setScene(elmInfo);
-            			elmInfoStage.setTitle(elm.elementName);
-            			elmInfoStage.show();
+            			//Scene elmInfo = new Scene(pane, 350, 300);
+            			//Stage elmInfoStage = new Stage();
+            			//elmInfoStage.setScene(elmInfo);
+            			//elmInfoStage.setTitle(elm.elementName);
+            			//elmInfoStage.show();
             	});
             	
                 matrix.add(label[elm.groupNum][elm.PeriodNum], elm.groupNum, elm.PeriodNum);
@@ -184,7 +185,9 @@ public class Main extends Application {
 		    }
 		    matrix.setPrefSize(400, 200);
 			BorderPane root = new BorderPane();
-			Scene scene = new Scene(matrix,550,300);
+			root.setTop(matrix);
+			root.setCenter(pane);
+			Scene scene = new Scene(root,600,400);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("Periodic Table");

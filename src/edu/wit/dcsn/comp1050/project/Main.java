@@ -11,6 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
 
 
 public class Main extends Application {
@@ -62,18 +63,72 @@ public class Main extends Application {
         }
 		try {
 			GridPane matrix = new GridPane();
-		    Label[][] label = new Label[19][19];
-		    
+		    Label[][] label = new Label[19][10];
+		    int tempGroupNum8 = 4;
+		    int tempGroupNum9 = 4;
 		    for(Element elm : elementList) {
-		    	if (elm.groupNum != -1){
+		    	if (elm.groupNum == -1 && 57 <= elm.atomicNum && elm.atomicNum <= 70){
+		    	label[tempGroupNum8][8] = new Label();
+            	label[tempGroupNum8][8].setText(" " + elm.symbol + " ");
+            	label[tempGroupNum8][8].autosize();
+            	switch(elm.groupName) {
+            		case "Alkali Metal": label[tempGroupNum8][8].setTextFill(Color.DARKRED); break;
+            		case "Nobel Gas": label[tempGroupNum8][8].setTextFill(Color.CADETBLUE); break;
+            		case "Alkaline Earth Metal": label[tempGroupNum8][8].setTextFill(Color.DARKSLATEBLUE); break;
+            		case "Boron Group": label[tempGroupNum8][8].setTextFill(Color.CORAL); break;
+            		case "Carbon Group": label[tempGroupNum8][8].setTextFill(Color.CRIMSON); break;
+            		case "Pnictogen": label[tempGroupNum8][8].setTextFill(Color.DARKGOLDENROD); break;
+            		case "Chalcogen": label[tempGroupNum8][8].setTextFill(Color.DARKGRAY); break;
+            		case "Halogen": label[tempGroupNum8][8].setTextFill(Color.DARKOLIVEGREEN); break;
+            		default: label[tempGroupNum8][8].setTextFill(Color.BLACK);
+            	}
+            	
+                matrix.add(label[tempGroupNum8][8], tempGroupNum8, 8);
+                tempGroupNum8++;
+		    	}
+		    	else if (elm.groupNum == -1 && 89 <= elm.atomicNum && elm.atomicNum <= 102){
+			    	label[tempGroupNum9][9] = new Label();
+	            	label[tempGroupNum9][9].setText(" " + elm.symbol + " ");
+	            	label[tempGroupNum9][9].autosize();
+	            	
+	            	switch(elm.groupName) {
+            		case "Alkali Metal": label[tempGroupNum9][9].setTextFill(Color.DARKRED); break;
+            		case "Nobel Gas": label[tempGroupNum9][9].setTextFill(Color.CADETBLUE); break;
+            		case "Alkaline Earth Metal": label[tempGroupNum9][9].setTextFill(Color.DARKSLATEBLUE); break;
+            		case "Boron Group": label[tempGroupNum9][9].setTextFill(Color.CORAL); break;
+            		case "Carbon Group": label[tempGroupNum9][9].setTextFill(Color.CRIMSON); break;
+            		case "Pnictogen": label[tempGroupNum9][9].setTextFill(Color.DARKGOLDENROD); break;
+            		case "Chalcogen": label[tempGroupNum9][9].setTextFill(Color.DARKGRAY); break;
+            		case "Halogen": label[tempGroupNum9][9].setTextFill(Color.DARKOLIVEGREEN); break;
+            		default: label[tempGroupNum9][9].setTextFill(Color.BLACK);
+            	}
+	            	
+	                matrix.add(label[tempGroupNum9][9], tempGroupNum9, 9);
+	                tempGroupNum9++;
+			    	}
+		    	else {
 		    	label[elm.groupNum][elm.PeriodNum] = new Label();
-            	label[elm.groupNum][elm.PeriodNum].setText(elm.symbol);
+            	label[elm.groupNum][elm.PeriodNum].setText(" " + elm.symbol + " ");
+            	label[elm.groupNum][elm.PeriodNum].autosize();
+            	
+            	switch(elm.groupName) {
+        		case "Alkali Metal": label[elm.groupNum][elm.PeriodNum].setTextFill(Color.DARKRED); break;
+        		case "Nobel Gas": label[elm.groupNum][elm.PeriodNum].setTextFill(Color.CADETBLUE); break;
+        		case "Alkaline Earth Metal": label[elm.groupNum][elm.PeriodNum].setTextFill(Color.DARKSLATEBLUE); break;
+        		case "Boron Group": label[elm.groupNum][elm.PeriodNum].setTextFill(Color.CORAL); break;
+        		case "Carbon Group": label[elm.groupNum][elm.PeriodNum].setTextFill(Color.CRIMSON); break;
+        		case "Pnictogen": label[elm.groupNum][elm.PeriodNum].setTextFill(Color.DARKGOLDENROD); break;
+        		case "Chalcogen": label[elm.groupNum][elm.PeriodNum].setTextFill(Color.DARKGRAY); break;
+        		case "Halogen": label[elm.groupNum][elm.PeriodNum].setTextFill(Color.DARKOLIVEGREEN); break;
+        		default: label[elm.groupNum][elm.PeriodNum].setTextFill(Color.BLACK);
+        	}
+            	
                 matrix.add(label[elm.groupNum][elm.PeriodNum], elm.groupNum, elm.PeriodNum);
 		    	}
 		    }
-		    
+		    matrix.setPrefSize(400, 200);
 			BorderPane root = new BorderPane();
-			Scene scene = new Scene(matrix,400,400);
+			Scene scene = new Scene(matrix,600,600);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.show();

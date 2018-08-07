@@ -4,12 +4,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
-
 import javafx.application.Application;
-import javafx.event.ActionEvent;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
@@ -53,6 +50,7 @@ public class Main extends Application {
         	// some fields may be surrounded by double quotes (") - remove them
         	// split the line into 9 separate fields (as defined in the file)
         	elementFields =         parseRecord( elementsDB.nextLine() ) ;
+        	//Instantiate an element and add to elementList
         	Element el = new Element(elementFields);
         	elementList.add(el);
         	}
@@ -64,54 +62,53 @@ public class Main extends Application {
         System.exit( 0 );
         }
 		try {
-			GridPane matrix = new GridPane();
-			BorderPane pane = new BorderPane();
-		    Label[][] label = new Label[19][10];
-		    int tempGroupNum8 = 4;
+			GridPane matrix = new GridPane(); //To print element easily
+			BorderPane pane = new BorderPane(); //outer container
+		    Label[][] label = new Label[19][10]; //Label used to display element's symbol
+		    int tempGroupNum8 = 4; //Group of non-GroupNum elements
 		    int tempGroupNum9 = 4;
 		    for(Element elm : elementList) {
 		    	if (elm.groupNum == -1 && 57 <= elm.atomicNum && elm.atomicNum <= 70){
-		    	label[tempGroupNum8][8] = new Label();
-            	label[tempGroupNum8][8].setText(" " + elm.symbol + " ");
-            	label[tempGroupNum8][8].autosize();
-            	switch(elm.groupName) {
-            		case "Alkali Metal": label[tempGroupNum8][8].setTextFill(Color.DARKRED); break;
-            		case "Nobel Gas": label[tempGroupNum8][8].setTextFill(Color.CADETBLUE); break;
-            		case "Alkaline Earth Metal": label[tempGroupNum8][8].setTextFill(Color.DARKSLATEBLUE); break;
-            		case "Boron Group": label[tempGroupNum8][8].setTextFill(Color.CORAL); break;
-            		case "Carbon Group": label[tempGroupNum8][8].setTextFill(Color.CRIMSON); break;
-            		case "Pnictogen": label[tempGroupNum8][8].setTextFill(Color.DARKGOLDENROD); break;
-            		case "Chalcogen": label[tempGroupNum8][8].setTextFill(Color.DARKGRAY); break;
-            		case "Halogen": label[tempGroupNum8][8].setTextFill(Color.DARKOLIVEGREEN); break;
-            		default: label[tempGroupNum8][8].setTextFill(Color.BLACK);
+		    		//First row of elements without group number
+		    		//Add text to label to display element's symbol
+		    		label[tempGroupNum8][8] = new Label();
+		    		label[tempGroupNum8][8].setText(" " + elm.symbol + " ");
+		    		label[tempGroupNum8][8].autosize();
+		    		switch(elm.groupName) {
+            			case "Alkali Metal": label[tempGroupNum8][8].setTextFill(Color.DARKRED); break;
+            			case "Nobel Gas": label[tempGroupNum8][8].setTextFill(Color.CADETBLUE); break;
+            			case "Alkaline Earth Metal": label[tempGroupNum8][8].setTextFill(Color.DARKSLATEBLUE); break;
+            			case "Boron Group": label[tempGroupNum8][8].setTextFill(Color.CORAL); break;
+            			case "Carbon Group": label[tempGroupNum8][8].setTextFill(Color.CRIMSON); break;
+            			case "Pnictogen": label[tempGroupNum8][8].setTextFill(Color.DARKGOLDENROD); break;
+            			case "Chalcogen": label[tempGroupNum8][8].setTextFill(Color.DARKGRAY); break;
+            			case "Halogen": label[tempGroupNum8][8].setTextFill(Color.DARKOLIVEGREEN); break;
+            			default: label[tempGroupNum8][8].setTextFill(Color.BLACK);
             	}
-            	label[tempGroupNum8][8].setOnMouseClicked(e -> {
-        			//BorderPane pane = new BorderPane();
+            	//Event Handler
+            	label[tempGroupNum8][8].setOnMouseEntered(e -> {
         			Label name = new Label("Name: " + elm.elementName);
         			Label number = new Label("Number: " + Integer.toString(elm.atomicNum));
-        			Label weight = new Label("Weight: " + elm.standardAtomicWeight);
+        			Label weight = new Label("Weight: " + ((elm.standardAtomicWeight.isEmpty())?"N/A":elm.standardAtomicWeight));
         			Label sym = new Label("Symbol: " + elm.symbol);
-        			Label group = new Label("Group Name: " + elm.groupName);
+        			Label group = new Label( "Group Name: "+((elm.groupName.isEmpty())?"N/A":elm.groupName));
+        			//Add Labels to Panes to display element info
         			pane.setCenter(sym);
         			pane.setBottom(weight);
         			pane.setTop(name);
         			pane.setLeft(number);
         			pane.setRight(group);
-        			//Scene elmInfo = new Scene(pane, 350, 300);
-        			//Stage elmInfoStage = new Stage();
-        			//elmInfoStage.setScene(elmInfo);
-        			//elmInfoStage.setTitle(elm.elementName);
-        			//elmInfoStage.show();
         	});
-            	
                 matrix.add(label[tempGroupNum8][8], tempGroupNum8, 8);
                 tempGroupNum8++;
 		    	}
 		    	else if (elm.groupNum == -1 && 89 <= elm.atomicNum && elm.atomicNum <= 102){
-			    	label[tempGroupNum9][9] = new Label();
+			    	//Second Row of elements without Group number
+		    		//Add text to display element's symbol
+		    		label[tempGroupNum9][9] = new Label();
 	            	label[tempGroupNum9][9].setText(" " + elm.symbol + " ");
 	            	label[tempGroupNum9][9].autosize();
-	            	
+	            	//Change color of element according to group
 	            	switch(elm.groupName) {
             		case "Alkali Metal": label[tempGroupNum9][9].setTextFill(Color.DARKRED); break;
             		case "Nobel Gas": label[tempGroupNum9][9].setTextFill(Color.CADETBLUE); break;
@@ -123,33 +120,30 @@ public class Main extends Application {
             		case "Halogen": label[tempGroupNum9][9].setTextFill(Color.DARKOLIVEGREEN); break;
             		default: label[tempGroupNum9][9].setTextFill(Color.BLACK);
             	}
-	            	label[tempGroupNum9][9].setOnMouseClicked(e -> {
-            			//BorderPane pane = new BorderPane();
+	            	//Even Handler
+	            	label[tempGroupNum9][9].setOnMouseEntered(e -> {
             			Label name = new Label("Name: " + elm.elementName);
             			Label number = new Label("Number: " + Integer.toString(elm.atomicNum));
-            			Label weight = new Label("Weight: " + elm.standardAtomicWeight);
+            			Label weight = new Label("Weight: " + ((elm.standardAtomicWeight.isEmpty())?"N/A":elm.standardAtomicWeight));
             			Label sym = new Label("Symbol: " + elm.symbol);
-            			Label group = new Label("Group Name: " + elm.groupName);
+            			Label group = new Label( "Group Name: "+((elm.groupName.isEmpty())?"N/A":elm.groupName));
+            			//Add Labels to Panes to display element info
             			pane.setCenter(sym);
             			pane.setBottom(weight);
             			pane.setTop(name);
             			pane.setLeft(number);
             			pane.setRight(group);
-            			//Scene elmInfo = new Scene(pane, 350, 300);
-            			//Stage elmInfoStage = new Stage();
-            			//elmInfoStage.setScene(elmInfo);
-            			//elmInfoStage.setTitle(elm.elementName);
-            			//elmInfoStage.show();
             	});
 	            	
 	                matrix.add(label[tempGroupNum9][9], tempGroupNum9, 9);
 	                tempGroupNum9++;
 			    	}
 		    	else {
+		    	//add Texts to label to display element's symbol
 		    	label[elm.groupNum][elm.PeriodNum] = new Label();
             	label[elm.groupNum][elm.PeriodNum].setText(" " + elm.symbol + " ");
             	label[elm.groupNum][elm.PeriodNum].autosize();
-            	
+            	//Change element's color according to Group
             	switch(elm.groupName) {
         		case "Alkali Metal": label[elm.groupNum][elm.PeriodNum].setTextFill(Color.DARKRED); break;
         		case "Nobel Gas": label[elm.groupNum][elm.PeriodNum].setTextFill(Color.CADETBLUE); break;
@@ -161,28 +155,25 @@ public class Main extends Application {
         		case "Halogen": label[elm.groupNum][elm.PeriodNum].setTextFill(Color.DARKOLIVEGREEN); break;
         		default: label[elm.groupNum][elm.PeriodNum].setTextFill(Color.BLACK);
         	}
-            	label[elm.groupNum][elm.PeriodNum].setOnMouseClicked(e -> {
-            			//BorderPane pane = new BorderPane();
+            	//Event Handler
+            	label[elm.groupNum][elm.PeriodNum].setOnMouseEntered(e -> {
             			Label name = new Label("Name: " + elm.elementName);
             			Label number = new Label("Number: " + Integer.toString(elm.atomicNum));
-            			Label weight = new Label("Weight: " + elm.standardAtomicWeight);
+            			Label weight = new Label("Weight: " + ((elm.standardAtomicWeight.isEmpty())?"N/A":elm.standardAtomicWeight));
             			Label sym = new Label("Symbol: " + elm.symbol);
-            			Label group = new Label("Group Name: " + elm.groupName);
+            			Label group = new Label( "Group Name: "+((elm.groupName.isEmpty())?"N/A":elm.groupName));
+            			//Add Labels to Panes to display element info
             			pane.setCenter(sym);
             			pane.setBottom(weight);
             			pane.setTop(name);
             			pane.setLeft(number);
             			pane.setRight(group);
-            			//Scene elmInfo = new Scene(pane, 350, 300);
-            			//Stage elmInfoStage = new Stage();
-            			//elmInfoStage.setScene(elmInfo);
-            			//elmInfoStage.setTitle(elm.elementName);
-            			//elmInfoStage.show();
             	});
-            	
+            	//Add Elements with group number
                 matrix.add(label[elm.groupNum][elm.PeriodNum], elm.groupNum, elm.PeriodNum);
 		    	}
 		    }
+		    //Display setting
 		    matrix.setPrefSize(400, 200);
 			BorderPane root = new BorderPane();
 			root.setTop(matrix);

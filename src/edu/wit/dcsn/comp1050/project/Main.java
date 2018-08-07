@@ -12,6 +12,12 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 
+/* 
+    * Comp 1050 ‐ Computer Science II 
+    * Summer, 2018 
+    * Group Project - Interactive, Graphical Periodic Table
+    * Matt Chapman, Tung Pham, John Kalogeroppulos
+*/
 
 public class Main extends Application {
 	private final static int SYMBOL =              0 ;
